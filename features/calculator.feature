@@ -21,8 +21,8 @@ Scenario: Divide two numbers
 When I divide "9" with "3"
 Then the result "3" should be displayed
 
-@ClearScenario
-Scenario: Clear the text
-When I add "8" and "7"
-When I click on AC button
-Then the result should be cleared
+#@ClearScenario
+#Scenario: Clear the text
+#When I add "8" and "7"
+#When I click on AC button
+#Then the result should be cleared

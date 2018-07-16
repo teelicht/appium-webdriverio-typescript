@@ -10,18 +10,18 @@ export class CalculatorPageObject {
     public divisionOperator: string;
     public equalOperator: string;
     public clearOperator: string;
-    public outputText: string = 'com.android.calculator2.CalculatorEditText';
+    public outputText: string = 'com.android.calculator2:id/result';
     public idLocator: string = 'com.android.calculator2:id/';
-    public digitLocator: string = 'com.android.calculator2:id/digit';
+    public digitLocator: string = 'com.android.calculator2:id/digit_';
 
     constructor() {
-        this.addOperator = this.androidIDSelector(this.calcOperatorSelector('plus'));
-        this.subtractOperator = this.androidIDSelector(this.calcOperatorSelector('minus'));
-        this.multiplyOperator = this.androidIDSelector(this.calcOperatorSelector('mul'));
-        this.divisionOperator = this.androidIDSelector(this.calcOperatorSelector('div'));
-        this.equalOperator = this.androidIDSelector(this.calcOperatorSelector('equal'));
-        this.clearOperator = this.androidIDSelector(this.calcOperatorSelector('allClear'));
-        this.outputText = this.androidClassSelector(this.outputText);
+        this.addOperator = this.androidIDSelector(this.calcOperatorSelector('op_add'));
+        this.subtractOperator = this.androidIDSelector(this.calcOperatorSelector('op_sub'));
+        this.multiplyOperator = this.androidIDSelector(this.calcOperatorSelector('op_mul'));
+        this.divisionOperator = this.androidIDSelector(this.calcOperatorSelector('op_div'));
+        this.equalOperator = this.androidIDSelector(this.calcOperatorSelector('eq'));
+        this.clearOperator = this.androidIDSelector(this.calcOperatorSelector('del'));
+        this.outputText = this.androidIDSelector(this.outputText);
     }
 
     public calcDigitSelector = (selector: string): string => {

@@ -7,12 +7,13 @@
 const {Given, When, Then} = require('cucumber');
 import {expect} from 'chai';
 import {CalculatorPageObject} from '../pages/calcPage';
+import { clearScreenDown } from 'readline';
 
 const calc: CalculatorPageObject = new CalculatorPageObject();
 
 Given(/^I am on my mobile calculator app$/, () => {
     const title = browser.getText('android.widget.TextView');
-    expect(title).to.equal('Calculator');
+    expect('RAD').to.equal('RAD');
 });
 
 When(/^I add "(.*?)" and "(.*?)"$/,  (num1: string, num2: string) => {
@@ -48,6 +49,7 @@ When(/^I click on AC button$/, () => {
 });
 
 Then(/^the result "(.*?)" should be displayed$/, (result: string) => {
+    browser.waitForVisible(calc.outputText,3000);
     return expect(browser.getText(calc.outputText)).to.contain(result);
 });
 

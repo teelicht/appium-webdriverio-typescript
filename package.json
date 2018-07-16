@@ -44,7 +44,7 @@
     "wdio-allure-reporter": "^0.6.2",
     "wdio-appium-service": "^0.2.3",
     "wdio-cucumber-framework": "^2.1.0",
-    "wdio-spec-reporter": "^0.1.4",
+    "wdio-spec-reporter": "^0.1.5",
     "webdriverio": "^4.12.0"
   }
 }

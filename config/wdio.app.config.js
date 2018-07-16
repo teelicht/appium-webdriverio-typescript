@@ -37,10 +37,10 @@ exports.config = {
             appPackage: 'com.android.calculator2',  // Package name of your app
             appActivity: 'com.android.calculator2.Calculator', // App activity of the app
             platformVersion: '7.1.1',              // Android platform version of the device
-            deviceName: 'THF755e0384',              // device name of the mobile device
+            deviceName: 'emulator-5554',              // device name of the mobile device
             waitforTimeout: waitforTimeout,
             commandTimeout: commandTimeout,
-            newCommandTimeout: 30 * 60000,
+            newCommandTimeout: 30 * 60000
         }
     ],
 
