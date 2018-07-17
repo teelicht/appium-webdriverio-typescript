@@ -12,11 +12,8 @@ const commandTimeout = 30 * 60000;
 
 exports.config = {
     debug: false,
-    specs: [
-        './features/calculator.feature',
-    ],
 
-    reporters: ['allure','spec'],
+    reporters: ['allure','spec','mochawesome'],
     reporterOptions: {
         allure: {
             outputDir: './allure-results/'
@@ -64,14 +61,10 @@ exports.config = {
      */
     logLevel: 'silent',
     coloredLogs: true,
-    framework: 'cucumber',          // cucumber framework specified 
-    cucumberOpts: {
-        compiler: ['ts:ts-node/register'],
-        backtrace: true,
-        failFast: false,
-        timeout: 5 * 60 * 60000,
-        require: ['./stepDefinitions/calcSteps.ts']      // importing/requiring step definition files
-    },
+    framework: 'mocha',          // cucumber framework specified 
+    mochaOpts: {
+        ui: 'bdd'
+      },
 
     /**
      * hooks help us execute the repeatitive and common utilities 
@@ -87,6 +80,14 @@ exports.config = {
 
     onComplete: function () {
         console.log('<<< TESTING FINISHED >>>');
-    }
+    },
+
+    before: function (capabilities, specs) {
+        var chai = require('chai');
+        var chaiWebdriver = require('chai-webdriverio').default;
+        chai.use(chaiWebdriver(browser));
+    
+        global.expect = chai.expect;
+      }
 
 };
