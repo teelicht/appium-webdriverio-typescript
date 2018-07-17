@@ -12,8 +12,8 @@ import { clearScreenDown } from 'readline';
 const calc: CalculatorPageObject = new CalculatorPageObject();
 
 Given(/^I am on my mobile calculator app$/, () => {
-    const title = browser.getText('android.widget.TextView');
-    expect('RAD').to.equal('RAD');
+    const title = browser.getText(calc.appNameLocator);
+    expect(title).to.equal('RAD');
 });
 
 When(/^I add "(.*?)" and "(.*?)"$/,  (num1: string, num2: string) => {

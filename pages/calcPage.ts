@@ -13,6 +13,7 @@ export class CalculatorPageObject {
     public outputText: string = 'com.android.calculator2:id/result';
     public idLocator: string = 'com.android.calculator2:id/';
     public digitLocator: string = 'com.android.calculator2:id/digit_';
+    public appNameLocator: string;
 
     constructor() {
         this.addOperator = this.androidIDSelector(this.calcOperatorSelector('op_add'));
@@ -21,6 +22,7 @@ export class CalculatorPageObject {
         this.divisionOperator = this.androidIDSelector(this.calcOperatorSelector('op_div'));
         this.equalOperator = this.androidIDSelector(this.calcOperatorSelector('eq'));
         this.clearOperator = this.androidIDSelector(this.calcOperatorSelector('del'));
+        this.appNameLocator = this.androidIDSelector(this.idLocator + 'mode');
         this.outputText = this.androidIDSelector(this.outputText);
     }
 
